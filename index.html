@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>fyrhythm&#39;blog</title>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>fyrhythm&#39;blog</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -21,14 +21,14 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1582467106526">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1582534283446">-->
 
   
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body class="mdui-drawer-body-left">
   
-  <div id="nexmoe-background">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="nexmoe-background">
     <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
@@ -48,8 +48,8 @@
     </div>
     <div class="nexmoe-count">
         <div><span>Articles</span>2</div>
-        <div><span>Tags</span>0</div>
-        <div><span>Categories</span>0</div>
+        <div><span>Tags</span>1</div>
+        <div><span>Categories</span>1</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -90,9 +90,41 @@
 </div>
   
   
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Categories</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/数据挖掘与机器学习/">数据挖掘与机器学习</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
 
   
   
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Tag Cloud</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 10px;">机器学习，数据挖掘</a>
+    </div>
+    
+  </div>
+
   
   
   <div class="nexmoe-widget-wrap">
@@ -128,13 +160,71 @@
 
         <div class="nexmoe-post-meta">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月23日</a>
-            <a><i class="nexmoefont icon-areachart"></i>0 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.2k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
         </div>
 
         <article>
             
-                
+                <h1 id="分类性能度量指标-ROC曲线、AUC值、正确率、召回率"><a href="#分类性能度量指标-ROC曲线、AUC值、正确率、召回率" class="headerlink" title="分类性能度量指标 : ROC曲线、AUC值、正确率、召回率"></a><strong>分类性能度量指标 : ROC曲线、AUC值、正确率、召回率</strong></h1><h3 id="1-混淆矩阵："><a href="#1-混淆矩阵：" class="headerlink" title="1.混淆矩阵："></a>1.混淆矩阵：</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:left">正类</th>
+<th>反类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预测为正类</td>
+<td style="text-align:left">TP</td>
+<td>FP</td>
+</tr>
+<tr>
+<td>预测为反类</td>
+<td style="text-align:left">FN</td>
+<td>TN</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>正确率（precision）：</p>
+<p>​                    </p>
+<script type="math/tex; mode=display">
+precision=\frac{TP}{TP+FP}</script><p>理解：所有被预测为正类的结果中正确预测的概率，即查准率</p>
+<p>召回率（recall）：</p>
+<script type="math/tex; mode=display">
+Recall=\frac{TP}{TP+FN}</script><p>理解：对所有正类的预测中预测正确的概率,衡量的是分类的查全率</p>
+<p>准确率（Accuracy）:</p>
+<script type="math/tex; mode=display">
+Accuracy=\frac{TP+TN}{TP+FP+FN+TN}</script><p>F值（F Measure）：</p>
+<script type="math/tex; mode=display">
+F1=\frac{1}{\frac{1}{2}\frac{1}{P}+\frac{1}{2}\frac{1}{R}}=\frac{2PR}{P+R}</script><p>F1允许在精确率和召回率之间达到某种均衡</p>
+<p>也就是P和R的调和平均值：</p>
+<script type="math/tex; mode=display">
+\frac{1}{F}=\frac{1}{2}(\frac{1}{P}+\frac{1}{R})</script><p>•精确率和召回率是相互影响的，理想情况下肯定是两者都高。</p>
+<p>•针对不同目的，如果是做搜索，那就是优先提高召回率，在保证召回率的情况下，提升准确率；如果做反垃圾，则是优先提高准确率，保准确率的条件下，提升召回率。</p>
+<p>•在两者都要求高的情况下，如何综合衡量准确率和召回率呢？一般使用F值。F1综合了P和R的结果，可用于综合评价实验结果的质量。</p>
+<h3 id="2-ROC曲线"><a href="#2-ROC曲线" class="headerlink" title="2.ROC曲线"></a>2.ROC曲线</h3><p><a href="https://imgchr.com/i/38s6PA" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://s2.ax1x.com/2020/02/24/38s6PA.png" alt="38s6PA.png" class="lazyload"></a></p>
+<p>如图为ROC曲线的一个例子。</p>
+<p>横坐标为FPR（负类预测为正的样本占所有负类样本的比例）</p>
+<p>纵坐标为TPR（正类预测为正的样本占所有正类样本的比例）</p>
+<p>在一个二分类模型中，假设采用逻辑回归分类器，其给出针对每个实例为正类的概率，那么通过设定一个阈值如0.6，概率大于等于0.6的为正类，小于0.6的为负类。对应的就可以算出一组(FPR,TPR)，在平面中得到对应坐标点。随着阈值的逐渐减小，越来越多的实例被划分为正类，但是这些正类中同样也掺杂着真正的负实例，即TPR和FPR会同时增大。阈值最大时，对应坐标点为(0,0)，阈值最小时，对应坐标点(1,1)。</p>
+<p>如下面这幅图，(a)图中实线为ROC曲线，线上每个点对应一个阈值。</p>
+<p><a href="https://imgchr.com/i/386CTg" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://s2.ax1x.com/2020/02/24/386CTg.md.png" alt="386CTg.md.png" class="lazyload"></a></p>
+<p>(a) 理想情况下，TPR应该接近1，FPR应该接近0。ROC曲线上的每一个点对应于一个threshold，对于一个分类器，每个threshold下会有一个TPR和FPR。比如Threshold最大时，TP=FP=0，对应于原点；Threshold最小时，TN=FN=1，对应于右上角的点(1,1)。<br>(b) P和N得分不作为特征间距离d的一个函数，随着阈值theta增加，TP和FP都增加。</p>
+<p>横轴FPR：FPR越大，预测正类中的负类越多</p>
+<p>纵轴TPR：TPR越大，预测正类中正类越多</p>
+<p>理想目标：TPR=1，FPR=0，所以ROC曲线越靠拢（0，1）点越好，<strong>ROC曲线下的面积</strong>越大越好。</p>
+<h3 id="3-AUC"><a href="#3-AUC" class="headerlink" title="3.AUC"></a>3.AUC</h3><p>AUC（Area Under Curve）被定义为ROC曲线下的面积，显然这个面积的数值不会大于1 。又由于ROC曲线一般都处于y=x这条直线的上方，所以AUC的取值范围一般在0.5和1之间。使用AUC值作为评价标准是因为很多时候ROC曲线并不能清晰的说明哪个分类器的效果更好，而作为一个数值，对应AUC更大的分类器效果更好。</p>
+<p><strong>AUC值意味着什么</strong></p>
+<p>首先AUC值是一个概率值，当你随机挑选一个正样本以及一个负样本，当前的分类算法根据计算得到的Score值将这个正样本排在负样本前面的概率就是AUC值。当然，AUC值越大，当前的分类算法越有可能将正样本排在负样本前面，即能够更好的分类。</p>
+<p>从AUC判断分类器（预测模型）优劣的标准：</p>
+<p>AUC = 1，是完美分类器，采用这个预测模型时，存在至少一个阈值能得出完美预测。绝大多数预测的场合，不存在完美分类器。<br>0.5 &lt; AUC &lt; 1，优于随机猜测。这个分类器（模型）妥善设定阈值的话，能有预测价值。<br>AUC = 0.5，跟随机猜测一样（例：丢铜板），模型没有预测价值。<br>AUC &lt; 0.5，比随机猜测还差；但只要总是反预测而行，就优于随机猜测。<br>三种AUC值示例：</p>
+<p><a href="https://imgchr.com/i/382V1A" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://s2.ax1x.com/2020/02/24/382V1A.md.png" alt="382V1A.md.png" class="lazyload"></a></p>
+<p><strong>AUC值越大的分类器，正确率越高</strong></p>
+
             
         </article>
     </div>
@@ -151,45 +241,21 @@
 
         <div class="nexmoe-post-meta">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月23日</a>
-            <a><i class="nexmoefont icon-areachart"></i>78 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>73 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
         </div>
 
         <article>
             
-                <p>Welcome to <span class="exturl"><a class="exturl__link"   href="https://hexo.io/"  target="_blank" rel="noopener">Hexo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>! This is your very first post. Check <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/"  target="_blank" rel="noopener">documentation</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/troubleshooting.html"  target="_blank" rel="noopener">troubleshooting</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> or you can ask me on <span class="exturl"><a class="exturl__link"   href="https://github.com/hexojs/hexo/issues"  target="_blank" rel="noopener">GitHub</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>.</p>
-
-        <h2   id="Quick-Start" >
-          <span class="heading-link">Quick Start</span>
-        </h2>
-      
-        <h3   id="Create-a-new-post" >
-          <span class="heading-link">Create a new post</span>
-        </h3>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/writing.html"  target="_blank" rel="noopener">Writing</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-
-        <h3   id="Run-server" >
-          <span class="heading-link">Run server</span>
-        </h3>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/server.html"  target="_blank" rel="noopener">Server</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-
-        <h3   id="Generate-static-files" >
-          <span class="heading-link">Generate static files</span>
-        </h3>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/generating.html"  target="_blank" rel="noopener">Generating</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-
-        <h3   id="Deploy-to-remote-sites" >
-          <span class="heading-link">Deploy to remote sites</span>
-        </h3>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/one-command-deployment.html"  target="_blank" rel="noopener">Deployment</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
             
         </article>
@@ -201,7 +267,7 @@
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/js/app.js?v=1582467106527"></script>-->
+<!--<script src="/js/app.js?v=1582534283450"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
@@ -218,6 +284,21 @@
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>
