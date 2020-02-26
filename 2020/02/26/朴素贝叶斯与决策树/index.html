@@ -4,7 +4,7 @@
 
 <head>
   
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>fyrhythm&#39;blog</title>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>朴素贝叶斯与决策树 - fyrhythm&#39;blog</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,16 +12,30 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta property="og:type" content="website">
-<meta property="og:title" content="fyrhythm&#39;blog">
-<meta property="og:url" content="http://github.com/fyering/fyering.github.io.git/index.html">
+  <meta name="description" content="贝叶斯分类和决策树模型1.分类问题（1）分类是一种有监督的学习 input： a vector of features  output： a Boolean value(二分类) or integer（多类） （2）有监督学习：需要给每个样本打标签 2.贝叶斯定理 P(A\cup B)&#x3D;P(A)+P(B)-P(A\cap B) P(A\cap B)&#x3D;P(A|B)P(B)&#x3D;P(B|A)P(A) P(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="朴素贝叶斯与决策树">
+<meta property="og:url" content="http://github.com/fyering/fyering.github.io.git/2020/02/26/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%B8%8E%E5%86%B3%E7%AD%96%E6%A0%91/index.html">
 <meta property="og:site_name" content="fyrhythm&#39;blog">
+<meta property="og:description" content="贝叶斯分类和决策树模型1.分类问题（1）分类是一种有监督的学习 input： a vector of features  output： a Boolean value(二分类) or integer（多类） （2）有监督学习：需要给每个样本打标签 2.贝叶斯定理 P(A\cup B)&#x3D;P(A)+P(B)-P(A\cap B) P(A\cap B)&#x3D;P(A|B)P(B)&#x3D;P(B|A)P(A) P(">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/24/3GkRSO.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/24/3Gu4oQ.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/24/3GJpMd.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/26/3U6jv4.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/26/3UVgMt.md.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/26/3UZpW9.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/26/3UeqET.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/26/3UmoJe.jpg">
+<meta property="article:published_time" content="2020-02-26T09:58:55.000Z">
+<meta property="article:modified_time" content="2020-02-26T10:00:44.608Z">
 <meta property="article:author" content="fyrhythm">
+<meta property="article:tag" content="机器学习，数据挖掘">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/24/3GkRSO.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1582711263686">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1582711263620">-->
 
   
 <meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
@@ -146,27 +160,34 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <section class="nexmoe-posts">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://s2.ax1x.com/2020/02/24/38jY0U.jpg" data-sizes="auto" alt="朴素贝叶斯与决策树" class="lazyload">
+          <h1>朴素贝叶斯与决策树</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月26日</a>
+    <a><i class="nexmoefont icon-areachart"></i>5.2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 22 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
     
-    <div class="nexmoe-post">
-        <a href="/2020/02/26/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%B8%8E%E5%86%B3%E7%AD%96%E6%A0%91/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
-                    <img data-src="https://s2.ax1x.com/2020/02/24/38jY0U.jpg" data-sizes="auto" alt="朴素贝叶斯与决策树" class="lazyload">
-                    <h1>朴素贝叶斯与决策树</h1>
-                </div>
-            
-        </a>
-
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月26日</a>
-            <a><i class="nexmoefont icon-areachart"></i>5.2k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 22 分钟</a>
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#贝叶斯分类和决策树模型"><span class="toc-number">1.</span> <span class="toc-text">贝叶斯分类和决策树模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-分类问题"><span class="toc-number">1.1.</span> <span class="toc-text">1.分类问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-贝叶斯定理"><span class="toc-number">1.2.</span> <span class="toc-text">2.贝叶斯定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-朴素贝叶斯分类器"><span class="toc-number">1.3.</span> <span class="toc-text">3.朴素贝叶斯分类器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-决策树"><span class="toc-number">1.4.</span> <span class="toc-text">4.决策树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信号与噪音"><span class="toc-number">1.5.</span> <span class="toc-text">信号与噪音</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拟合优度"><span class="toc-number">1.6.</span> <span class="toc-text">拟合优度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过拟合和欠拟合"><span class="toc-number">1.7.</span> <span class="toc-text">过拟合和欠拟合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何检查过拟合"><span class="toc-number">1.8.</span> <span class="toc-text">如何检查过拟合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何避免过拟合"><span class="toc-number">1.9.</span> <span class="toc-text">如何避免过拟合</span></a></li></ol></li></ol>
+            </div>
         </div>
+      </div>
+    
+  </div>
 
-        <article>
-            
-                <h1 id="贝叶斯分类和决策树模型"><a href="#贝叶斯分类和决策树模型" class="headerlink" title="贝叶斯分类和决策树模型"></a>贝叶斯分类和决策树模型</h1><h2 id="1-分类问题"><a href="#1-分类问题" class="headerlink" title="1.分类问题"></a>1.分类问题</h2><p>（1）分类是一种有监督的学习</p>
+  <article>
+    <h1 id="贝叶斯分类和决策树模型"><a href="#贝叶斯分类和决策树模型" class="headerlink" title="贝叶斯分类和决策树模型"></a>贝叶斯分类和决策树模型</h1><h2 id="1-分类问题"><a href="#1-分类问题" class="headerlink" title="1.分类问题"></a>1.分类问题</h2><p>（1）分类是一种有监督的学习</p>
 <p>input： a vector of features </p>
 <p>output： a Boolean value(二分类) or integer（多类）</p>
 <p>（2）有监督学习：需要给每个样本打标签</p>
@@ -352,130 +373,53 @@ Giniindex(D,a)=\sum^{V}_{v=1}\frac{|Dv|}{|D|}Gini(Dv)</script><p>面我们提到
 <p>原文见：</p>
 <p><a href="https://zhuanlan.zhihu.com/p/40516287" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/40516287</a></p>
 
-            
-        </article>
-    </div>
+  </article>
+
+  <div class="nexmoe-post-meta">
     
-    <div class="nexmoe-post">
-        <a href="/2020/02/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%88%86%E7%B1%BB%E6%80%A7%E8%83%BD%E5%BA%A6%E9%87%8F/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
-                    <img data-src="https://s2.ax1x.com/2020/02/24/38jY0U.jpg" data-sizes="auto" alt="myfirstBlog" class="lazyload">
-                    <h1>myfirstBlog</h1>
-                </div>
-            
-        </a>
-
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月23日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1.2k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
-        </div>
-
-        <article>
-            
-                <h1 id="分类性能度量指标-ROC曲线、AUC值、正确率、召回率"><a href="#分类性能度量指标-ROC曲线、AUC值、正确率、召回率" class="headerlink" title="分类性能度量指标 : ROC曲线、AUC值、正确率、召回率"></a><strong>分类性能度量指标 : ROC曲线、AUC值、正确率、召回率</strong></h1><h3 id="1-混淆矩阵："><a href="#1-混淆矩阵：" class="headerlink" title="1.混淆矩阵："></a>1.混淆矩阵：</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align:left">正类</th>
-<th>反类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>预测为正类</td>
-<td style="text-align:left">TP</td>
-<td>FP</td>
-</tr>
-<tr>
-<td>预测为反类</td>
-<td style="text-align:left">FN</td>
-<td>TN</td>
-</tr>
-</tbody>
-</table>
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">数据挖掘与机器学习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" rel="tag">机器学习，数据挖掘</a>
+    
 </div>
-<p>正确率（precision）：</p>
-<p>​                    </p>
-<script type="math/tex; mode=display">
-precision=\frac{TP}{TP+FP}</script><p>理解：所有被预测为正类的结果中正确预测的概率，即查准率</p>
-<p>召回率（recall）：</p>
-<script type="math/tex; mode=display">
-Recall=\frac{TP}{TP+FN}</script><p>理解：对所有正类的预测中预测正确的概率,衡量的是分类的查全率</p>
-<p>准确率（Accuracy）:</p>
-<script type="math/tex; mode=display">
-Accuracy=\frac{TP+TN}{TP+FP+FN+TN}</script><p>F值（F Measure）：</p>
-<script type="math/tex; mode=display">
-F1=\frac{1}{\frac{1}{2}\frac{1}{P}+\frac{1}{2}\frac{1}{R}}=\frac{2PR}{P+R}</script><p>F1允许在精确率和召回率之间达到某种均衡</p>
-<p>也就是P和R的调和平均值：</p>
-<script type="math/tex; mode=display">
-\frac{1}{F}=\frac{1}{2}(\frac{1}{P}+\frac{1}{R})</script><p>•精确率和召回率是相互影响的，理想情况下肯定是两者都高。</p>
-<p>•针对不同目的，如果是做搜索，那就是优先提高召回率，在保证召回率的情况下，提升准确率；如果做反垃圾，则是优先提高准确率，保准确率的条件下，提升召回率。</p>
-<p>•在两者都要求高的情况下，如何综合衡量准确率和召回率呢？一般使用F值。F1综合了P和R的结果，可用于综合评价实验结果的质量。</p>
-<h3 id="2-ROC曲线"><a href="#2-ROC曲线" class="headerlink" title="2.ROC曲线"></a>2.ROC曲线</h3><p><a href="https://imgchr.com/i/38s6PA" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://s2.ax1x.com/2020/02/24/38s6PA.png" alt="38s6PA.png" class="lazyload"></a></p>
-<p>如图为ROC曲线的一个例子。</p>
-<p>横坐标为FPR（负类预测为正的样本占所有负类样本的比例）</p>
-<p>纵坐标为TPR（正类预测为正的样本占所有正类样本的比例）</p>
-<p>在一个二分类模型中，假设采用逻辑回归分类器，其给出针对每个实例为正类的概率，那么通过设定一个阈值如0.6，概率大于等于0.6的为正类，小于0.6的为负类。对应的就可以算出一组(FPR,TPR)，在平面中得到对应坐标点。随着阈值的逐渐减小，越来越多的实例被划分为正类，但是这些正类中同样也掺杂着真正的负实例，即TPR和FPR会同时增大。阈值最大时，对应坐标点为(0,0)，阈值最小时，对应坐标点(1,1)。</p>
-<p>如下面这幅图，(a)图中实线为ROC曲线，线上每个点对应一个阈值。</p>
-<p><a href="https://imgchr.com/i/386CTg" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://s2.ax1x.com/2020/02/24/386CTg.md.png" alt="386CTg.md.png" class="lazyload"></a></p>
-<p>(a) 理想情况下，TPR应该接近1，FPR应该接近0。ROC曲线上的每一个点对应于一个threshold，对于一个分类器，每个threshold下会有一个TPR和FPR。比如Threshold最大时，TP=FP=0，对应于原点；Threshold最小时，TN=FN=1，对应于右上角的点(1,1)。<br>(b) P和N得分不作为特征间距离d的一个函数，随着阈值theta增加，TP和FP都增加。</p>
-<p>横轴FPR：FPR越大，预测正类中的负类越多</p>
-<p>纵轴TPR：TPR越大，预测正类中正类越多</p>
-<p>理想目标：TPR=1，FPR=0，所以ROC曲线越靠拢（0，1）点越好，<strong>ROC曲线下的面积</strong>越大越好。</p>
-<h3 id="3-AUC"><a href="#3-AUC" class="headerlink" title="3.AUC"></a>3.AUC</h3><p>AUC（Area Under Curve）被定义为ROC曲线下的面积，显然这个面积的数值不会大于1 。又由于ROC曲线一般都处于y=x这条直线的上方，所以AUC的取值范围一般在0.5和1之间。使用AUC值作为评价标准是因为很多时候ROC曲线并不能清晰的说明哪个分类器的效果更好，而作为一个数值，对应AUC更大的分类器效果更好。</p>
-<p><strong>AUC值意味着什么</strong></p>
-<p>首先AUC值是一个概率值，当你随机挑选一个正样本以及一个负样本，当前的分类算法根据计算得到的Score值将这个正样本排在负样本前面的概率就是AUC值。当然，AUC值越大，当前的分类算法越有可能将正样本排在负样本前面，即能够更好的分类。</p>
-<p>从AUC判断分类器（预测模型）优劣的标准：</p>
-<p>AUC = 1，是完美分类器，采用这个预测模型时，存在至少一个阈值能得出完美预测。绝大多数预测的场合，不存在完美分类器。<br>0.5 &lt; AUC &lt; 1，优于随机猜测。这个分类器（模型）妥善设定阈值的话，能有预测价值。<br>AUC = 0.5，跟随机猜测一样（例：丢铜板），模型没有预测价值。<br>AUC &lt; 0.5，比随机猜测还差；但只要总是反预测而行，就优于随机猜测。<br>三种AUC值示例：</p>
-<p><a href="https://imgchr.com/i/382V1A" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://s2.ax1x.com/2020/02/24/382V1A.md.png" alt="382V1A.md.png" class="lazyload"></a></p>
-<p><strong>AUC值越大的分类器，正确率越高</strong></p>
 
-            
-        </article>
-    </div>
+  <div class="nexmoe-post-footer">
     
-    <div class="nexmoe-post">
-        <a href="/2020/02/23/hello-world/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
-                    <img data-src="https://s2.ax1x.com/2020/02/24/38jY0U.jpg" data-sizes="auto" alt="Hello World" class="lazyload">
-                    <h1>Hello World</h1>
-                </div>
-            
-        </a>
-
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月23日</a>
-            <a><i class="nexmoefont icon-areachart"></i>73 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-        </div>
-
-        <article>
-            
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-            
-        </article>
-    </div>
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>fyrhythm<br>
+    <strong>Link：</strong><a href="http://github.com/fyering/fyering.github.io.git/2020/02/26/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%B8%8E%E5%86%B3%E7%AD%96%E6%A0%91/" title="http:&#x2F;&#x2F;github.com&#x2F;fyering&#x2F;fyering.github.io.git&#x2F;2020&#x2F;02&#x2F;26&#x2F;%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%B8%8E%E5%86%B3%E7%AD%96%E6%A0%91&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;github.com&#x2F;fyering&#x2F;fyering.github.io.git&#x2F;2020&#x2F;02&#x2F;26&#x2F;%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%B8%8E%E5%86%B3%E7%AD%96%E6%A0%91&#x2F;</a><br>
     
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
+</script>
 </section>
-
+  </div>
+</div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/js/app.js?v=1582711263690"></script>-->
+<!--<script src="/js/app.js?v=1582711263628"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
